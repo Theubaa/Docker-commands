@@ -1,0 +1,17 @@
+Create a instanes From AWS ec 2
+copy the public ip and login in your terminal through ssh 
+command---> ssh -i (Key pair name )   (user name)@(public ip)
+
+now u r in your instance
+so 
+# update
+sudo apt update 
+# Upgrade
+sudo apt install upgrade
+
+# install apache2
+sudo apt install apache2
+
+# install docker 
+sudo apt install docker.io
+
