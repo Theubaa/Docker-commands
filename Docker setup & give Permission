@@ -1,0 +1,25 @@
+# check docker version
+docker --version
+
+# run the command 
+ docker pull ubuntu:latest
+
+you wille get this
+--> permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=ubuntu&tag=latest": dial unix /var/run/docker.sock: connect: permission denied
+
+so This means your have no permission to use Docker so we gave permission
+cmd -->  sudo usermod -aG docker $USER
+create a group to give permission to user
+cmd -->  groups $USER
+restart your docker
+cmd -->  sudo systemctl restart docker
+Adjust File Permissions
+Ensure the Docker socket has the correct permissions:
+cmd -->  sudo chmod 666 /var/run/docker.sock
+Check The Docker status
+cmd -->  sudo systemctl status docker
+run the command for start the docker
+cmd -->  sudo systemctl start docker
+
+
+NOW YOUR DOCKER SETUP IS DONE YOU CAN USE DOCKER OR RUN DOCKER COMMAND
